@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:ViewStack xmlns:mx="http://www.adobe.com/2006/mxml" 
+		   width="100%" height="100%" paddingLeft="5" paddingRight="5" 
+		   xmlns:view="com.colorhook.twitterair.view.*">
+	<mx:WipeUp id="wipeUp"/>
+	<mx:WipeDown id="wipeDown"/>
+	<view:HomeView showEffect="{wipeDown}" hideEffect="{wipeUp}"/>
+	<view:UserProfileView showEffect="{wipeDown}" hideEffect="{wipeUp}"/>
+	<view:FriendsView showEffect="{wipeDown}" hideEffect="{wipeUp}"/>
+	<view:FollowersView showEffect="{wipeDown}" hideEffect="{wipeUp}"/>
+	<view:PublicView showEffect="{wipeDown}" hideEffect="{wipeUp}"/>
+	<view:SearchUserView showEffect="{wipeDown}" hideEffect="{wipeUp}"/>
+</mx:ViewStack>
+

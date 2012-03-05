@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" 
+			xmlns:view="com.colorhook.twitterair.view.*">
+	<mx:Text text="My Profile" fontSize="18" fontWeight="bold"
+			selectable="false" styleName="eFont" color="#DDDDDD"/>
+    <mx:VBox width="100%" height="100%" verticalGap="5" y="30">
+    	<mx:HBox left="5" width="100%">
+    		<mx:VBox verticalGap="0" paddingLeft="5">
+    			<view:TwitterHead id="frofileImage" width="60" height="60" left="20"/>
+    		</mx:VBox>
+    		
+    		<mx:VBox verticalGap="0" width="100%">
+    			<mx:HBox horizontalGap="0" width="100%">
+    				<mx:Label text="username: " fontWeight="bold"/>
+    				<mx:Label id="username"/>
+    				<mx:Spacer width="10"/>
+    				<mx:Label text="location: " fontWeight="bold"/>
+    				<mx:Label id="location"/>
+    			</mx:HBox>
+				<mx:HBox horizontalGap="0">
+    				<mx:Label id="friend_info" width="100"/>
+    				<mx:Label id="follower_info" width="100"/>
+    				<mx:Label id="status_info" width="100"/>
+    			</mx:HBox>
+    			<mx:HBox horizontalGap="0">
+    				<mx:Label text="website: " fontWeight="bold"/>
+    				<mx:Label id="website" width="100%" selectable="true"/>
+    			</mx:HBox> 
+    			
+    		</mx:VBox>
+    	</mx:HBox>
+    	<mx:HBox>
+    		<mx:Button label="Change Photo"
+						click="dispatchEvent(new UIEvent(UIEvent.CHANGE_PROFILE_IMAGE))"/>
+			<mx:HBox horizontalGap="0">
+				<mx:Label text="description: " fontWeight="bold"/>
+				<mx:Label id="description" width="100%"/>
+			</mx:HBox> 
+    	</mx:HBox>
+		
+		<view:TwitterStatusList id="userTwitterList" width="100%" height="100%"
+			 replyEnabled="false" retweetEnabled="false"/>
+		<mx:HBox width="100%">
+			<mx:Button label="remove older" width="50%"
+			click="dispatchEvent(new UIEvent(UIEvent.REMOVE_OLDER))"/>
+			<mx:Button label="get more" width="50%"
+			click="dispatchEvent(new UIEvent(UIEvent.GET_MORE_TWITTER))"/>
+		</mx:HBox>
+    </mx:VBox>
+    <mx:Button id="refreshButton" styleName="twitterRefresh" 
+			right="0" top="5" toolTip="Refresh"/>
+</mx:Canvas>

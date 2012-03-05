@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+		xmlns:view="com.colorhook.twitterair.view.*"
+		width="100%" height="100%">
+	<mx:VBox width="100%" height="100%">
+		<mx:Text text="My Followers" fontSize="18" fontWeight="bold"
+				selectable="false" styleName="eFont" color="#DDDDDD"/>
+		<view:TwitterUserList id="userList" width="100%" height="100%"/>
+	</mx:VBox>
+	<mx:Button id="refreshButton" styleName="twitterRefresh" 
+			right="0" top="5" toolTip="Refresh"/>
+</mx:Canvas>

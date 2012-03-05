@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%">
+	<mx:Script>
+		<![CDATA[
+		private function submitForm():void
+		{
+			if(username_txt.text!==""&&password_txt.text!="")
+			{
+				dispatchEvent(new UIEvent(UIEvent.LOGIN_REQUEST));
+			}else{
+				if(!fadeIn.isPlaying&&!fadeOut.isPlaying)
+				fadeIn.play();
+			}
+		}
+		]]>
+	</mx:Script>
+	
+	<mx:Form defaultButton="{submitButton}" 
+			horizontalCenter="0"
+			 verticalCenter="0">
+		<mx:FormHeading label="Please sign in with your twitter account"/>
+        <mx:FormItem label="Username:" color="0xFF0000">
+            <mx:TextInput id="username_txt" width="270"/>
+        </mx:FormItem>
+        <mx:FormItem label="Password:">
+            <mx:TextInput id="password_txt" width="270" displayAsPassword="true"/>
+        </mx:FormItem>
+         <mx:FormItem>
+            <mx:CheckBox id="autoLogin_check" alpha="0.5" label="Keep me signed in util I sign out"/>
+        </mx:FormItem>
+        <mx:FormItem width="100%">        		
+        	<mx:Button id="submitButton" label="sign in" click="submitForm()"/>  
+        </mx:FormItem>
+        <mx:FormItem id="tip" alpha="0">
+        	<mx:Label text="The username and password are required." styleName="eFont"
+        			color="0xAADDFF"/>
+        </mx:FormItem>
+    </mx:Form>
+    <mx:Fade id="fadeIn" target="{tip}" alphaFrom="0" alphaTo="1" effectEnd="{fadeOut.play()}"/>
+    <mx:Fade id="fadeOut" target="{tip}" alphaFrom="1" alphaTo="0" startDelay="1000"/>
+</mx:Canvas>

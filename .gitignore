@@ -1,0 +1,6 @@
+bin-debug/*
+Thumbs.db
+.svn
+.settings
+libs/*.swc
+clearsvn.bat

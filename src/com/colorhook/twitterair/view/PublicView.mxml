@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" 
+	xmlns:view="com.colorhook.twitterair.view.*">
+	
+	<mx:VBox width="100%" height="100%">
+		<mx:Text text="Public Timeline" fontSize="18" fontWeight="bold"
+				selectable="false" styleName="eFont" color="#DDDDDD"/>
+		<view:TwitterStatusList id="publicList" width="100%" height="100%"
+				 replyEnabled="false" retweetEnabled="false"/>
+	</mx:VBox>
+	<mx:Button id="refreshButton" styleName="twitterRefresh" 
+		right="0" top="5" toolTip="Refresh"/>
+</mx:Canvas>
+

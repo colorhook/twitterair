@@ -1,0 +1,226 @@
+global{
+	fontWeight: normal;
+	fontStyle: normal;
+	backgroundColor: #4F4F4F;
+	fontSize:12px;
+	color:#999999;
+}
+@font-face {
+    src: url("/../assets/fonts/fonts.swf");
+    fontFamily: "Clean Pro";
+	fontWeight: normal;
+	fontStyle: normal;
+}
+
+@font-face {
+    src: url("/../assets/fonts/fonts.swf");
+    fontFamily: "Clean Pro";
+	fontWeight: bold;
+	fontStyle: normal;
+}
+
+@font-face
+ {
+    src: url("/../assets/fonts/fonts.swf");
+    fontFamily: "Clean Pro SmBd";
+	fontWeight: normal;
+	fontStyle: normal;
+}
+
+@font-face {
+    src: url("/../assets/fonts/fonts.swf");
+    fontFamily: "Clean Pro SmBd SmCn";
+	fontWeight: normal;
+	fontStyle: normal;
+}
+Application{
+	paddingLeft:0;
+	paddingRight:0;
+	paddingTop:0;
+	paddingBottom:0;
+	fontFamily: "Verdana";
+}
+ApplicationControlBar{
+	borderSkin:Embed(source="kingnarestyle.swf", symbol="Button_disabledSkin");
+}
+HBox, VBox{
+	backgroundAlpha:0;
+}
+TextInput{
+	paddingLeft:4px;
+	fontWeight:normal;
+	borderSkin:Embed(source="kingnarestyle.swf", symbol="Button_disabledSkin");
+}
+Button{
+	color:#f2f2f2;
+}
+LinkButton{
+	skin:ClassReference("com.colorhook.twitterair.style.SolidBorder");
+}
+List
+{
+	color: #BBBBBB;
+	rollOverColor: #222222;
+	selectionColor: #444444;
+	textRollOverColor: #FFFFFF;
+	textSelectedColor: #FFFFFF;
+	borderColor: #222222;
+	backgroundColor: #333333;
+	
+}
+.tabStyle {
+	disabledSkin: Embed(source="kingnarestyle.swf", symbol="Tab_disabledSkin");
+	downSkin: Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin"); 
+	overSkin: Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin"); 
+	selectedDisabledSkin: Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin");
+	selectedDownSkin: Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin");
+	selectedOverSkin: Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin");  
+	selectedUpSkin: Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin"); 
+	upSkin: Embed(source="kingnarestyle.swf", symbol="TabSelected_upSkin"); 
+	color:#aaaaaa;
+	textRollOverColor:#ffffff;
+	textSelectedColor:#ffffff;
+}
+FormItem{
+	fontSize:12px;
+}
+ToolTip{
+	fontSize:11px;
+}
+.eFont{
+	fontFamily: "Clean Pro";
+}
+
+
+
+.zeroPadding{
+	paddingLeft:0;
+	paddingRight:0;
+	paddingTop:0;
+	paddingBottom:0;
+}
+/*button style*/
+.closeButton {
+	up-skin		:	Embed("/../assets/images/pc_close_up.png");
+	over-skin   :	Embed("/../assets/images/pc_close_down.png");
+	down-skin   :	Embed("/../assets/images/pc_close_down.png");
+}
+
+.minimizeButton {
+	up-skin		:	Embed("/../assets/images/pc_minimize_up.png");
+	over-skin	:	Embed("/../assets/images/pc_minimize_down.png");
+	down-skin	:	Embed("/../assets/images/pc_minimize_down.png");
+}
+.maximizeButton {
+	up-skin		:	Embed("/../assets/images/pc_maximize_up.png");
+	over-skin	:	Embed("/../assets/images/pc_maximize_down.png");
+	down-skin	:	Embed("/../assets/images/pc_maximize_down.png");
+}
+.resizeButton {
+	skin: Embed("/../assets/images/resize_up.png");
+}
+.homeButton{
+	up-skin:Embed(source="assets/images/home_up.png");
+	over-skin:Embed(source="assets/images/home_over.png");
+	down-skin:Embed(source="assets/images/home_down.png");
+	selectedUpSkin:Embed(source="assets/images/home_down.png");
+	selectedOverSkin:Embed(source="assets/images/home_over.png");
+	selectedDownSkin:Embed(source="assets/images/home_down.png");
+}
+.profileButton{
+	up-skin:Embed(source="assets/images/profile_up.png");
+	over-skin:Embed(source="assets/images/profile_over.png");
+	down-skin:Embed(source="assets/images/profile_down.png");
+	selectedUpSkin:Embed(source="assets/images/profile_down.png");
+	selectedOverSkin:Embed(source="assets/images/profile_over.png");
+	selectedDownSkin:Embed(source="assets/images/profile_down.png");
+}
+.settingButton{
+	up-skin:Embed("assets/images/setting_up.png");	
+	over-skin:Embed("assets/images/setting_over.png");
+	down-skin:Embed("assets/images/setting_down.png");
+	selectedUpSkin:Embed(source="assets/images/setting_down.png");
+	selectedOverSkin:Embed(source="assets/images/setting_over.png");
+	selectedDownSkin:Embed(source="assets/images/setting_down.png");
+}
+.aboutButton{
+	up-skin:Embed(source="assets/images/about_up.png");
+	over-skin:Embed(source="assets/images/about_over.png");
+	down-skin:Embed(source="assets/images/about_down.png");
+	selectedUpSkin:Embed(source="assets/images/about_down.png");
+	selectedOverSkin:Embed(source="assets/images/about_over.png");
+	selectedDownSkin:Embed(source="assets/images/about_down.png");
+}
+.logoutButton{
+	up-skin:Embed(source="assets/images/signout_up.png");
+	over-skin:Embed(source="assets/images/signout_over.png");
+	down-skin:Embed(source="assets/images/signout_down.png");
+}
+.license{
+	fontFamily: "Clean Pro";
+	backgroundColor:#333333;
+	padding-top:5;
+	padding-left:3;
+	padding-right:3;
+	borderSkin:ClassReference("com.colorhook.twitterair.style.SolidBorder");
+}
+/*Twitter Data UI*/
+.twitterInput{
+	backgroundColor:#333333;
+	padding-left:3;
+	padding-right:3;
+	cornerRadius:5;
+	borderSkin:ClassReference("com.colorhook.twitterair.style.SolidBorder");
+}
+.twitterScreenUser{
+	backgroundColor:#2276BB;
+	cornerRadius:5;
+	color:#AADDFF;
+}
+.twitterCreateAt{
+	color:#666666;
+}
+.twitterTweet{
+	color:#EEEEEE;
+}
+.userTwitter{
+	color:#C0DEED;
+	fontSize:12px;
+	fontWeight:bold;
+}
+.twitterReply{
+	up-skin:Embed(source="assets/images/reply_up.png");
+	over-skin:Embed(source="assets/images/reply_over.png");
+	down-skin:Embed(source="assets/images/reply_down.png");
+}
+.twitterRetweet{
+	up-skin:Embed(source="assets/images/retweet_up.png");
+	over-skin:Embed(source="assets/images/retweet_over.png");
+	down-skin:Embed(source="assets/images/retweet_down.png");
+}
+.twitterFavorite{
+	up-skin:Embed(source="assets/images/favorite_up.png");
+	over-skin:Embed(source="assets/images/favorite_over.png");
+	down-skin:Embed(source="assets/images/favorite_down.png");
+}
+
+.twitterDelete{
+	up-skin:Embed(source="assets/images/delete_up.png");
+	over-skin:Embed(source="assets/images/delete_over.png");
+	down-skin:Embed(source="assets/images/delete_down.png");
+}
+.twitterFollow{
+	up-skin:Embed(source="assets/images/follow_up.png");
+	over-skin:Embed(source="assets/images/follow_over.png");
+	down-skin:Embed(source="assets/images/follow_down.png");
+}
+.twitterUnfollow{
+	up-skin:Embed(source="assets/images/unfollow_up.png");
+	over-skin:Embed(source="assets/images/unfollow_over.png");
+	down-skin:Embed(source="assets/images/unfollow_down.png");
+}
+.twitterRefresh{
+	up-skin:Embed(source="assets/images/refresh_up.png");
+	over-skin:Embed(source="assets/images/refresh_over.png");
+	down-skin:Embed(source="assets/images/refresh_down.png");
+}

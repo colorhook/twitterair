@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" 
+		xmlns:view="com.colorhook.twitterair.view.*"
+		width="100%" height="100%" verticalGap="0">
+	
+	<mx:WipeLeft id="irisOut" duration="300"/>
+    <mx:WipeRight id="irisIn" duration="300"/>
+    
+	<view:ApplicationTitleBar height="35"/>
+	<mx:ViewStack id="viewStack" width="100%" height="100%">
+		<view:LoginView id="loginView" showEffect="{irisIn}" hideEffect="{irisOut}"/>
+		<view:MainView id="mainView" showEffect="{irisIn}" hideEffect="{irisOut}"/>
+		<view:UserPreferencesView showEffect="{irisIn}" hideEffect="{irisOut}"/>
+	</mx:ViewStack>
+	
+	<mx:Canvas height="30" width="100%">
+			<mx:ApplicationControlBar width="100%" height="100%"/>
+			<mx:HBox x="5" y="3">
+				<mx:ComboBox id="menu" visible="false" includeInLayout="false" 
+					color="0xEEEEEE" width="100%" rowCount="7">
+		            <mx:dataProvider>
+		            	<mx:Array>
+		            		<mx:String>My Timeline</mx:String>
+		            		<mx:String>My Profile</mx:String>
+		            		<mx:String>My Friends</mx:String>
+		            		<mx:String>My Followers</mx:String>
+		            		<mx:String>Public Timeline</mx:String>
+		            		<mx:String>Search User</mx:String>
+		            	</mx:Array>
+		            </mx:dataProvider>
+		       	 </mx:ComboBox>
+		       	 <mx:HBox paddingTop="3">
+		       	 	<mx:Button id="homeButton" styleName="homeButton" 
+						width="17" height="17" toolTip="Go Back" includeInLayout="false" visible="false"
+						click="dispatchEvent(new UIEvent(UIEvent.GO_BACK))"/>
+		       	 	<mx:Button id="settingButton" styleName="settingButton" 
+						width="17" height="17" toolTip="User Preferences"
+						click="dispatchEvent(new UIEvent(UIEvent.USER_PREF))"/>
+		       	 	<mx:Button id="aboutButton" styleName="aboutButton" 
+						width="17" height="17" toolTip="About Twitter Air"
+						click="dispatchEvent(new UIEvent(UIEvent.ABOUT))"/>
+					<mx:VRule height="18" strokeColor="0x666666"/>
+					<mx:Button id="logoutButton" styleName="logoutButton" visible="false" 
+						width="17" height="17" toolTip="Sign Out"
+						click="dispatchEvent(new UIEvent(UIEvent.LOGOUT_REQUEST))"/>
+		       	 </mx:HBox>
+			</mx:HBox>
+			<mx:Canvas id="resizeButton" width="32" height="32"  
+				    bottom="0" right="0" backgroundAlpha="0">
+				<mx:Image  source="@Embed(source='assets/images/resize_up.png')" bottom="0" right="0"/>
+			</mx:Canvas>
+		</mx:Canvas>
+</mx:VBox>

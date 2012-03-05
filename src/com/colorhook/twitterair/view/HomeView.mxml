@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+	       xmlns:view="com.colorhook.twitterair.view.*" 
+	       width="100%" height="100%">
+	<mx:VBox height="100%" width="100%" styleName="zeroPadding" verticalGap="0">
+		<view:UpdateTwitterView width="100%" left="0"/>
+		<view:TwitterStatusList id="homeTimeline" height="100%" width="100%"/>
+		<mx:HBox width="100%">
+			<mx:Button label="remove older" width="50%"
+			click="dispatchEvent(new UIEvent(UIEvent.REMOVE_OLDER))"/>
+			<mx:Button label="get more" width="50%"
+			click="dispatchEvent(new UIEvent(UIEvent.GET_MORE_TWITTER))"/>
+		</mx:HBox>
+	</mx:VBox>
+	<mx:Button id="refreshButton" styleName="twitterRefresh" 
+		right="0" top="5" toolTip="Refresh"/>
+</mx:Canvas>

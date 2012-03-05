@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="35">
+	<mx:ApplicationControlBar id="banner" width="100%" height="100%">
+		<mx:Text text="Twitter Air" height="100%" width="100%" 
+				selectable="false" color="0xEEEEEE"
+				textAlign="center" mouseEnabled="false" 
+				fontWeight="bold" fontSize="16" styleName="eFont"/>
+	</mx:ApplicationControlBar>
+	<mx:HBox right="5" top="10" backgroundAlpha="0">
+		<mx:Button styleName="minimizeButton" click="dispatchEvent(new UIEvent(UIEvent.MINIMIZE))"/>
+		<mx:Button styleName="maximizeButton" click="dispatchEvent(new UIEvent(UIEvent.MAXIMIZE))"/>
+		<mx:Button styleName="closeButton" click="dispatchEvent(new UIEvent(UIEvent.CLOSE))"/>
+	</mx:HBox>
+</mx:Canvas>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute" width="100%" height="100%"
+	xmlns:view="com.colorhook.twitterair.view.*">
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import com.colorhook.twitterair.vo.UserItem;
+			[Bindable]
+			public var userItem:UserItem;
+			public var screenName:String;
+		]]>
+	</mx:Script>
+	<mx:VBox width="100%" height="100%" verticalGap="5" y="5">
+	    	<mx:HBox left="5" width="100%">
+	    		<mx:VBox verticalGap="0" paddingLeft="5">
+	    			<view:TwitterHead id="frofileImage" width="60" height="60" left="20" 
+	    				source="{userItem.profileImageUrl}"/>
+	    		</mx:VBox>
+	    		
+	    		<mx:VBox verticalGap="0" width="100%">
+	    			<mx:HBox horizontalGap="0" width="100%">
+	    				<mx:Label text="Username: " fontWeight="bold" styleName="eFont"/>
+	    				<mx:Label text="{userItem.screenName}" styleName="eFont"/>
+	    				<mx:Spacer width="10"/>
+	    				<mx:Label text="Location: " fontWeight="bold" styleName="eFont"/>
+	    				<mx:Label text="{userItem.location}" styleName="eFont"/>
+	    			</mx:HBox>
+					<mx:HBox horizontalGap="0">
+	    				<mx:Label width="150" text="Friends count: {userItem.friendsCount}" styleName="eFont"/>
+	    				<mx:Label width="150" text="Followers count: {userItem.followersCount}" styleName="eFont"/>
+	    				<mx:Label width="150" text="Status count: {userItem.statusesCount}" styleName="eFont"/>
+	    			</mx:HBox>
+	    			<mx:HBox horizontalGap="0">
+	    				<mx:Label text="Website: " fontWeight="bold" styleName="eFont"/>
+	    				<mx:Label text="{userItem.url}" width="100%" selectable="true" styleName="eFont"/>
+	    			</mx:HBox>
+	    			<mx:HBox horizontalGap="0">
+	    				<mx:Label text="Descritpion: " fontWeight="bold" styleName="eFont"/>
+	    				<mx:Label text="{userItem.description}" width="420" 
+	    					selectable="true" styleName="eFont"/>
+	    			</mx:HBox>
+	    		</mx:VBox>
+	    	</mx:HBox>
+	    		
+			<view:TwitterStatusList id="userTwitterList" width="100%" height="100%"
+				 replyEnabled="false" retweetEnabled="false" />
+			<mx:HBox width="100%">
+				<mx:Button label="remove older" width="50%" click="this.dispatchEvent(new UIEvent(UIEvent.REMOVE_OLDER))"/>
+				<mx:Button label="get more" width="50%" click="this.dispatchEvent(new UIEvent(UIEvent.GET_MORE_TWITTER))"/>
+			</mx:HBox>
+	    </mx:VBox>
+</mx:Panel>

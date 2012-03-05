@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" 
+		width="400" height="220" verticalGap="0" 
+		paddingBottom="2" paddingTop="5" 
+		title="About Twitter Air" titleStyleName="eFont"
+	    showCloseButton="true" close="closeHandler()">
+   
+		<mx:Script>
+			<![CDATA[
+				import mx.core.Application;
+				import mx.managers.PopUpManager;
+	
+				
+				private function closeHandler():void{
+					close();
+				}
+				public function close():void{
+					PopUpManager.removePopUp(this);
+				}
+				
+				public function toCenter():void{
+					this.x=(this.stage.stageWidth-this.width)*0.5;
+					this.y=(this.stage.stageHeight-this.height)*0.5;
+				}
+			]]>
+		</mx:Script>
+			<mx:VBox width="100%" height="100%" verticalCenter="right">
+				<mx:Text styleName="eFont" color="0xCCCCCC" height="140" width="100%">
+					<mx:htmlText>
+			<![CDATA[Twitter Air is a desktop application based on Adobe AIR technology for twitter. User can use it to update twitter and view others. It's a platform independent application which means that you can run it on Windows PC, Mac and even GNU/Linux distribution.
+
+version: 0.7
+copyright: © 2010-2011 colorhook.com
+For more infomation please visit my website: <font color="#AADDFF"><a href="http://colorhook.com">www.colorhook.com</a></font>]]>
+					</mx:htmlText>
+				</mx:Text>
+				<mx:HBox width="100%">
+					<mx:Spacer width="100%"/>
+					<mx:Button label="Close" click="closeHandler()" right="0"/>
+				</mx:HBox>
+				
+			</mx:VBox>
+
+</mx:TitleWindow>
+

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Window xmlns:mx="http://www.adobe.com/2006/mxml" 
+	showTitleBar="false" showStatusBar="false" 
+	layout="absolute" width="600" height="680"
+    systemChrome="none" transparent="true"
+	xmlns:view="com.colorhook.twitterair.view.*"
+ 	xmlns:context="com.colorhook.twitterair.*"
+ 	resizable="false" titleTextStyleName="eFont"
+ 	creationComplete="init()" >
+	
+	<mx:Script>
+		<![CDATA[
+			import com.colorhook.twitterair.model.UserPageModel;
+			import com.colorhook.twitterair.services.ILogService;
+			import org.robotlegs.core.IInjector;
+			import com.colorhook.twitterair.vo.UserItem;
+			import com.swfjunkie.tweetr.data.objects.UserData;
+			import mx.core.UIComponent;
+			
+			[Bindable]
+			public var screenName:String;
+			public var injector:IInjector;
+			
+			[Inject]public var logService:ILogService;
+			[Inject]public var userPageModel:UserPageModel;
+			
+			public var mediator:TwitterUserPanelMediator;
+			
+			private function init():void{
+				var titleBar:UIComponent=panel.mx_internal::getTitleBar() as UIComponent;
+				titleBar.addEventListener(MouseEvent.MOUSE_DOWN,onTitleBarMouseDown);
+				titleBar.setStyle('fontWeight','bold');
+				this.mediator=new TwitterUserPanelMediator;
+				this.injector.mapValue(TwitterUserPanel,this.panel);
+				this.injector.injectInto(mediator);
+				this.mediator.onRegister();
+			}
+			private function onTitleBarMouseDown(event:MouseEvent):void{
+				this.nativeWindow.startMove();
+			}
+			
+			public function closeWin():void{
+				this.mediator.onRemove();
+				userPageModel.removeUserPage(screenName);
+				this.nativeWindow.close();
+			}
+			
+			public function minimizeWin():void{
+				this.nativeWindow.minimize();
+			}
+			public function refreshWin():void{
+				
+			}
+			
+			public function onRegister():void{
+				logService.info("TwitterUserWindow onRegister");
+			}
+			public function onRemove():void{
+				
+			}
+		]]>
+	</mx:Script>
+		
+	
+	<view:TwitterUserPanel id="panel" width="100%" height="100%" 
+		screenName="{screenName}" title="Twitter Air | {screenName}"/>
+	<mx:Button id="closeButton" styleName="closeButton" 
+				right="5" top="10" click="closeWin()"/>
+	<mx:Button id="minimizeButton" styleName="minimizeButton" 
+				right="25" top="10" click="minimizeWin()"/>
+</mx:Window>

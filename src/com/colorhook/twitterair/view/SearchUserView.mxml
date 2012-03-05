@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%"
+		 	xmlns:view="com.colorhook.twitterair.view.*">
+	<mx:VBox width="100%" height="100%" verticalGap="2">
+		<mx:Text text="Search User" fontSize="18" fontWeight="bold"
+				selectable="false" styleName="eFont" color="#DDDDDD"/>
+		<mx:HBox width="100%" height="28"
+				verticalCenter="0" verticalAlign="middle">
+			<mx:TextInput id="search_input" width="200" height="100%" 
+				enter="dispatchEvent(new UIEvent(UIEvent.SEARCH_REQUEST))"/>
+			<mx:Button label="search" height="100%" 
+				click="dispatchEvent(new UIEvent(UIEvent.SEARCH_REQUEST))"/>
+		</mx:HBox>
+		<view:TwitterUserList id="userList" width="100%" height="100%"/>
+	</mx:VBox>
+</mx:Canvas>
